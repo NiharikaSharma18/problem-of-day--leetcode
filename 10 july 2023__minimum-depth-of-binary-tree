@@ -1,0 +1,21 @@
+class Solution {
+public:
+    int minDepth(TreeNode* root) {
+   if(root==NULL)
+   return 0;
+    int k=0,mini=INT_MAX;
+    minD(root,k,mini);
+    return mini;}
+    void minD(TreeNode* root,int k,int &mini){
+         if(root==NULL)
+   return ;
+k++;
+if(root->left==NULL && root->right==NULL){
+    mini=min(k,mini);
+    return;
+}
+minD(root->left,k,mini);
+minD(root->right,k,mini);
+              
+    } 
+};
